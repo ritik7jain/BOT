@@ -1,0 +1,2 @@
+tele = "5905437737:AAHWHUF0P6d_P_2a8JRqNmh-dwYwPNqeHyc"
+gpt = "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"
