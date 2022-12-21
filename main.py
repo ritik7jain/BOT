@@ -2,6 +2,7 @@ import openai
 import logging
 import os
 import random
+import config
 
 import pymysql as pymysql
 import telegram
@@ -21,10 +22,10 @@ DB_NAME = 'users'
 # Connect to the database
 conn = pymysql.connect(host=DB_HOST, user=DB_USERNAME, password=DB_PASSWORD, db=DB_NAME)
 # Replace YOUR_API_KEY with your actual API key
-openai.api_key = "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"
+openai.api_key = config.gpt
 
 # Replace YOUR_TELEGRAM_TOKEN with your actual Telegram token
-updater = Updater(token="5905437737:AAHWHUF0P6d_P_2a8JRqNmh-dwYwPNqeHyc", use_context=True)
+updater = Updater(token=config.tele, use_context=True)
 usage_counts = {}
 def start(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="Hi there! I'm Bot and can answer your all question feel free to ask any question")
